@@ -49,6 +49,7 @@ Miembros del equipo, los que se encargan de las tareas. Desarrolladores.
 - https://git-scm.com/
 
 ## 2. Comandos git:
+
 - git init -> Genera carpeta oculta.git. Aquí se guarda la configuración de git y registra los cambios. 
 
 - git status -> nos muestra el estado de los archivos del proyecto. Si se le hace seguimiento o no.
@@ -56,6 +57,18 @@ Miembros del equipo, los que se encargan de las tareas. Desarrolladores.
 - git add .->  añade todos los archivos. Si queremos un archivo específico sería git add < archivo >
 
 - git commit -m "< mensaje >"-> punto de control
+
+El mensaje debe ser descriptivo, y por convención debemos poner si estamos agregando, editando o eliminando algo. (Conventional commits)
+
+Ejs: 
+
+- Creación archivo index.html:
+
+<code> git commit -m "feat: Creación index.html" </code>
+
+- Edición/ arreglar algo:
+
+<code> git commit -m "fix: Modificación title en el html" </code>
 
 - git config --list -> muestra la configuración actual de git
 
@@ -93,7 +106,7 @@ Modelo de flujo de trabajo que usa Git para control de versiones. Se usa para ma
 
 - dev: rama de desarrollo, aquí es donde se hacen los cambios. Por eso se haría git pull origin dev, no main.
 
-- feature/idTarea: ramas para las características que se unen en dev.
+- feature/idTarea: ramas para las características que se unen en dev. Todos los commits de este feature, deben ser para ese id, si se necesitan más cambios se puede crear otroa tarea y otro feature.
 
 - release: rama de QA. Preparar lanzamientos de nuevas versiones
 
@@ -103,3 +116,28 @@ No es normal que la rama main tenga una feature, debe pasar por dev. Sino, pasa 
 
 - Desde GitHub podemos crear ramas desde la interfaz.
 
+### Proceso:
+
+#### Gestor de tareas (Trello, Jira, etc.)
+
+Se busca la persona y se asigna las tareas.
+Cuando se crea la tarea, genera un id. 
+
+- git clone del repositorio donde estamos trabajando. (Si ya lo tenemos, hacer el git pull para tener la versión actual del proyecto)
+
+- git checkout -b < feature/idTarea_AyudaVisual > -> crea la rama y nos posiciona en ella directamente. Puede llevar _PalabraClave para ayudarnos a identificar la tarea, pero siempre debe llevar el id.
+
+- Se desarrolla lo necesario de la tarea específica en la rama creada. 
+
+- Al finalizar, se hace:
+<code> git push origin feature/idTarea_AyudaVisual </code>
+
+- Luego, desde GitHub, creamos el pull request. Por defecto, intenta mandarlos a main, debemos modificarlo a la rama develop. Desde GitHub, podemos organizar en reviewers quién va a revisar ese pull request.
+
+- Hasta ahí llegamos con esa tarea normalmente, podemos continuar el proceso con cada tarea.
+
+##### Desde el administrador
+
+- En el repositorio, sale en el menu de pull request la solicitud. Además, sale en qué rama estamos. Y debe salir el aviso de que main no está protegida, normalmente ella siempre está protegida.
+
+- Puede ver todos los cambios que se hicieron, comentar, aprobar, rechazar los cambios.
