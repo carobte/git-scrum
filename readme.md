@@ -141,3 +141,7 @@ Cuando se crea la tarea, genera un id.
 - En el repositorio, sale en el menu de pull request la solicitud. Además, sale en qué rama estamos. Y debe salir el aviso de que main no está protegida, normalmente ella siempre está protegida.
 
 - Puede ver todos los cambios que se hicieron, comentar, aprobar, rechazar los cambios.
+
+- Cuando hay conflictos, se hace pull de develop, sino no porque pueden haber más personas trabajando en otras features. 
+
+- Cuando se aprueban los cambios, desde GitHub, se hace el pull request y el merge. Ahí ya se cierra el cierre del ticket (tarea). Cuando vemos la rama develop, aparece en los commits de develop, y sale el pull request y quién lo aprueba.
