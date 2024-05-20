@@ -142,6 +142,6 @@ Cuando se crea la tarea, genera un id.
 
 - Puede ver todos los cambios que se hicieron, comentar, aprobar, rechazar los cambios.
 
-- Cuando hay conflictos, se hace pull de develop, sino no porque pueden haber más personas trabajando en otras features. 
-
 - Cuando se aprueban los cambios, desde GitHub, se hace el pull request y el merge. Ahí ya se cierra el cierre del ticket (tarea). Cuando vemos la rama develop, aparece en los commits de develop, y sale el pull request y quién lo aprueba.
+
+- Antes de crear una rama para una nueva feature, y antes de hacer pull request y merge, verificamos tener la versión actual de develop.
